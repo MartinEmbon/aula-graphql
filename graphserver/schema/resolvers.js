@@ -1,4 +1,4 @@
-const { UserList, MovieList } = require("../FakeData")
+const { UserList, MovieList, Grapes, Countries,Pairing } = require("../FakeData")
 const _ = require("lodash")
 
 const resolvers = {
@@ -39,6 +39,22 @@ const resolvers = {
         }
     },
     Query: {
+        grapes: () => {
+            return Grapes;
+        },
+        grape:(parent, args)=>{
+            const name = args.name;
+            const grape = _.find(Grapes,{name})
+            return grape
+        },
+        countries:()=>{
+            return Countries
+        },
+        country:(parent,args)=>{
+            const name = args.name;
+            const country = _.find(Countries,{name})
+            return country
+        },
         users: () => {
             return UserList;
             //if (UserList) return {users: UserList}
@@ -66,5 +82,6 @@ const resolvers = {
         }
     }
 }
+
 
 module.exports = { resolvers }
