@@ -1,4 +1,4 @@
-const { UserList, MovieList, Grapes, Countries,Pairing } = require("../FakeData")
+const { UserList, MovieList, Grapes, Countries,Pairing, Styles } = require("../FakeData")
 const _ = require("lodash")
 
 const resolvers = {
@@ -39,6 +39,14 @@ const resolvers = {
         }
     },
     Query: {
+        style:(parent,args)=>{
+            const name = args.name;
+            const style = _.find(Styles,{name})
+            return style;
+        },
+        styles:()=>{
+            return Styles
+        },
         grapes: () => {
             return Grapes;
         },

@@ -1,35 +1,104 @@
+
+const Styles = [
+  {
+    id: 1,
+    type: "Blanco",
+    grapes: [
+
+      {
+        id: 4,
+        name: "Chardonnay",
+
+      },
+      {
+        id: 5,
+        name: "Grauburgunder",
+
+      },
+      {
+        id: 6,
+        name: "Sylvaner",
+
+      },
+      {
+        id: 7,
+        name: "Gewurstraminer",
+
+      },
+
+      {
+        id: 11,
+        name: "Torrontes",
+      },
+    ]
+  },
+  {
+    id: 2,
+    type: "Tinto",
+    grapes: [
+      {
+        id: 1,
+        name: "Cabernet Sauvignon",
+      },
+      {
+        id: 2,
+        name: "Malbec",
+      },
+      {
+        id: 3,
+        name: "Syrah",
+      },
+      {
+        id: 8,
+        name: "Montepulciano",
+
+      },
+      {
+        id: 9,
+        name: "Sangiovese",
+
+      },
+      {
+        id: 10,
+        name: "Nebbiolo",
+      },
+    ]
+  },
+];
+
+
 const Regions = [
   {
     id: 1,
-    name: "Mosel",    
+    name: "Mosel",
   },
   {
     id: 2,
     name: "Reinghau",
   },
   {
-    id:3,
-    name:"Piemonte"
+    id: 3,
+    name: "Piemonte"
   },
   {
-    id:4,
-    name:"Toscana"
+    id: 4,
+    name: "Toscana"
   },
   {
-    id:5,
-    name:"Puglia"
+    id: 5,
+    name: "Puglia"
   },
   {
-    id:6,
-    name:"Mendoza"
+    id: 6,
+    name: "Mendoza"
   },
   {
-    id:7,
-    name:"Salta"
+    id: 7,
+    name: "Salta"
   },
   {
-    id:7,
-    name:"Patagonia"
+    id: 7,
+    name: "Patagonia"
   }
 ];
 
@@ -43,16 +112,16 @@ const Pairing = [
     name: "Cordeiro",
   },
   {
-    id:3,
-    name:"Carne de porco"
+    id: 3,
+    name: "Carne de porco"
   },
   {
-    id:4,
-    name:"Massas"
+    id: 4,
+    name: "Massas"
   },
   {
-    id:5,
-    name:"Aperitivos"
+    id: 5,
+    name: "Aperitivos"
   }
 ];
 
@@ -60,51 +129,51 @@ const Countries = [
   {
     id: 1,
     name: "Alemanha",
-    mainGrape:[
+    mainGrape: [
       {
         id: 5,
         name: "Grauburgunder",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ]
       },
       {
         id: 6,
         name: "Sylvaner",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ]
       },
       {
         id: 7,
         name: "Gewurstraminer",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ]
       },
     ],
-    regions:[
+    regions: [
       {
         id: 1,
         name: "Mosel",
@@ -113,92 +182,92 @@ const Countries = [
         id: 2,
         name: "Reinghau",
       },
-    ]    
+    ]
   },
   {
     id: 2,
     name: "Italia",
-    mainGrape:[
+    mainGrape: [
       {
         id: 8,
         name: "Montepulciano",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ]
       },
       {
         id: 9,
         name: "Sangiovese",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ]
       },
       {
         id: 10,
         name: "Nebbiolo",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ]
       },
     ],
-    regions:[
+    regions: [
       {
-        id:3,
-        name:"Piemonte"
+        id: 3,
+        name: "Piemonte"
       },
       {
-        id:4,
-        name:"Toscana"
+        id: 4,
+        name: "Toscana"
       },
       {
-        id:5,
-        name:"Puglia"
+        id: 5,
+        name: "Puglia"
       },
     ]
   },
   {
-    id:3,
-    name:"Argentina",
-    mainGrape:[
+    id: 3,
+    name: "Argentina",
+    mainGrape: [
       {
         id: 11,
         name: "Torrontes",
-        pairing:[
+        pairing: [
           {
-            id:5,
-            name:"Aperitivos"
+            id: 5,
+            name: "Aperitivos"
           },
           {
-            id:4,
-            name:"Massas"
+            id: 4,
+            name: "Massas"
           },
         ],
-         },
+      },
       {
         id: 1,
-        name: "Cabernet Sauvignon",   
-        pairing:[
+        name: "Cabernet Sauvignon",
+        pairing: [
           {
             id: 1,
             name: "Carne de vaca",
@@ -208,30 +277,30 @@ const Countries = [
       {
         id: 2,
         name: "Malbec",
-        pairing:[
+        pairing: [
           {
             id: 1,
             name: "Carne de vaca",
           },
           {
-            id:3,
-            name:"Carne de porco"
-          },         
+            id: 3,
+            name: "Carne de porco"
+          },
         ]
-      },      
+      },
     ],
-    regions:[
+    regions: [
       {
-        id:6,
-        name:"Mendoza"
+        id: 6,
+        name: "Mendoza"
       },
       {
-        id:7,
-        name:"Salta"
+        id: 7,
+        name: "Salta"
       },
       {
-        id:7,
-        name:"Patagonia"
+        id: 7,
+        name: "Patagonia"
       }
     ]
   }
@@ -240,8 +309,8 @@ const Countries = [
 const Grapes = [
   {
     id: 1,
-    name: "Cabernet Sauvignon",   
-    pairing:[
+    name: "Cabernet Sauvignon",
+    pairing: [
       {
         id: 1,
         name: "Carne de vaca",
@@ -251,140 +320,140 @@ const Grapes = [
   {
     id: 2,
     name: "Malbec",
-    pairing:[
+    pairing: [
       {
         id: 1,
         name: "Carne de vaca",
       },
       {
-        id:3,
-        name:"Carne de porco"
+        id: 3,
+        name: "Carne de porco"
       },
     ]
   },
   {
     id: 3,
     name: "Syrah",
-    pairing:[
+    pairing: [
       {
         id: 1,
-        name: "Carne de vaca",        
+        name: "Carne de vaca",
       },
       {
-        id:3,
-        name:"Carne de porco"
+        id: 3,
+        name: "Carne de porco"
       },
     ]
   },
   {
     id: 4,
     name: "Chardonnay",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 5,
     name: "Grauburgunder",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 6,
     name: "Sylvaner",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 7,
     name: "Gewurstraminer",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 8,
     name: "Montepulciano",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 9,
     name: "Sangiovese",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 10,
     name: "Nebbiolo",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
   {
     id: 11,
     name: "Torrontes",
-    pairing:[
+    pairing: [
       {
-        id:5,
-        name:"Aperitivos"
+        id: 5,
+        name: "Aperitivos"
       },
       {
-        id:4,
-        name:"Massas"
+        id: 4,
+        name: "Massas"
       },
     ]
   },
@@ -480,4 +549,4 @@ const MovieList = [
   },
 ];
 
-module.exports = { UserList, MovieList, Grapes, Countries, Pairing, Regions };
+module.exports = { UserList, MovieList, Grapes, Countries, Pairing, Regions, Styles };

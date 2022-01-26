@@ -2,17 +2,6 @@ const { gql } = require("apollo-server")
 
 const typeDefs = gql `
 
-type Grape {
-  id: ID!
-  name: String!  
-  pairing:[Pairing]
-}
-
-type Pairing {
-  id: ID!
-  name: String!   
-}
-
 type Country{
   id:ID!
   name: String!
@@ -20,16 +9,36 @@ type Country{
   mainGrape:[MainGrape]
 }
 
-type MainGrape{
+type Style{
   id:ID!
-  name:String!
-  pairing: [Pairing]!
+  type: String!
+  grapes:[Grape]
 }
 
 type Regions {
   id: ID!
   name: String!  
 }
+
+
+type MainGrape{
+  id:ID!
+  name:String!
+  pairing: [Pairing]
+}
+
+type Pairing {
+  id: ID!
+  name: String!   
+}
+
+type Grape {
+  id: ID!
+  name: String!  
+  pairing:[Pairing]
+}
+
+
 
 type User {
     id: ID!
@@ -58,6 +67,8 @@ type User {
   }
     
     type Query {
+        style(name:String!):Style!
+       styles:[Style!]!  
         countries:[Country!]!
         country(name:String!):Country!
         grapes:[Grape!]!  
