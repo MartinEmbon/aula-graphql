@@ -14,6 +14,17 @@ const resolvers = {
         }
     },
     Mutation: {
+        updateCountry:(parent,args)=>{
+            const {id, newCountry}=args.input;
+            let countryUpdated;
+            Countries.forEach((country)=>{
+                if(country.id===Number(id)){
+                    country.name=newCountry;
+                    countryUpdated=country;
+                }
+            });
+            return countryUpdated;
+        },
         createNewGrape:(parent,args)=>{
             const grape = args.input;
             const lastId = Grapes[Grapes.length-1].id;
@@ -64,6 +75,11 @@ const resolvers = {
             const id = args.id
             _.remove(Grapes, (grape) => grape.id === Number(id))
             return null
+        },
+        deleteCountry:(parent,args)=>{
+            const id=args.id;
+            _.remove(Countries,(country)=>country.id===Number(id));
+            return null;
         },
     
         deleteUser: (parent, args) => {
