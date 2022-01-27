@@ -14,6 +14,21 @@ const resolvers = {
         }
     },
     Mutation: {
+        createNewGrape:(parent,args)=>{
+            const grape = args.input;
+            const lastId = Grapes[Grapes.length-1].id;
+            grape.id=lastId+1;
+            Grapes.push(grape);
+            return grape;
+        },
+        createCountry:(parent,args)=>{
+            const country = args.input;
+            const lastId = Countries[Countries.length - 1].id;
+            country.id=lastId+1;
+            Countries.push(country);
+            return country;
+        },
+        
         createUser: (parent, args) => {
             const user = args.input;
             const lastId = UserList[UserList.length - 1].id;
@@ -32,6 +47,25 @@ const resolvers = {
             })
             return userUpdated;
         },
+        updateGrapeName: (parent, args) => {
+            const { id, newGrape } = args.input;
+            let grapeUpdated;
+            Grapes.forEach((grape) => {
+                if (grape.id === Number(id)) {
+                    grape.name = newGrape;
+                    console.log(grape.name)
+                    grapeUpdated = grape;
+                    
+                }
+            })
+            return grapeUpdated;
+        },
+        deleteGrape: (parent, args) => {
+            const id = args.id
+            _.remove(Grapes, (grape) => grape.id === Number(id))
+            return null
+        },
+    
         deleteUser: (parent, args) => {
             const id = args.id
             _.remove(UserList, (user) => user.id === Number(id))

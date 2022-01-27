@@ -5,8 +5,8 @@ const typeDefs = gql `
 type Country{
   id:ID!
   name: String!
-  regions:[Regions]
-  mainGrape:[MainGrape]
+  regions:[Regions!]!  
+  mainGrape:[MainGrape]  
 }
 
 type Style{
@@ -17,7 +17,7 @@ type Style{
 
 type Regions {
   id: ID!
-  name: String!  
+  name: String!   
 }
 
 
@@ -35,7 +35,7 @@ type Pairing {
 type Grape {
   id: ID!
   name: String!  
-  pairing:[Pairing]
+  
 }
 
 
@@ -68,7 +68,7 @@ type User {
     
     type Query {
         style(name:String!):Style!
-       styles:[Style!]!  
+        styles:[Style!]!  
         countries:[Country!]!
         country(name:String!):Country!
         grapes:[Grape!]!  
@@ -85,15 +85,34 @@ type User {
         age: Int!
         nationality: Nationality = BRAZIL
       }
+      
+      input CreateCountryInput {        
+        name: String!            
+        regions:[String]
+        mainGrape:String      
+      }
+
+      input CreateNewGrapeInput{        
+        name: String!          
+      }
+      input UpdateGrapeNameInput{        
+        id:ID!
+        newGrape: String!          
+      }
+
       input UpdateUsernameInput {
         id:ID!
         newUsername:String!
       }
       
       type Mutation {
+        createNewGrape(input:CreateNewGrapeInput!):Grape
+        createCountry(input:CreateCountryInput!):Country
         createUser(input: CreateUserInput!): User
         updateUsername(input:UpdateUsernameInput!): User
+        updateGrapeName(input:UpdateGrapeNameInput!):Grape
         deleteUser(id:ID!):User
+        deleteGrape(id:ID!):Grape
     }
 
     
